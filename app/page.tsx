@@ -22,10 +22,6 @@ function Home() {
   useEffect(updateFileList, [])
 
   return (<>
-    <Head>
-      <meta name="description" content="Video Downloader for web video downloading" />
-      <title>Video Downloader</title>
-    </Head>
     <div className={styles["container-wrap"]}>
     <div className={styles.container}>
       <UrlDownloader onDownloaded={updateFileList} onError={(e) => { alert(e) }} />
