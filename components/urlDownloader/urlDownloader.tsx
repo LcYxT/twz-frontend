@@ -5,8 +5,8 @@ import { postDownloadUrl } from '../../utils'
 import styles from './urlDownloader.module.scss'
 
 interface Props {
-  onDownloaded: () => void
-  onError: (e: any) => void
+  onDownloaded?: () => void
+  onError?: (e: any) => void
 }
 
 function isValidYouTubeUrl(url: string): boolean {
@@ -35,10 +35,10 @@ export function UrlDownloader({ onDownloaded, onError }: Props) {
             setIsDownloading(true)
             await postDownloadUrl(url)
             setIsDownloading(false)
-            onDownloaded()
+            onDownloaded ? onDownloaded() : null
           } catch (e) {
             setIsDownloading(false)
-            onError(e)
+            onError ? onError(e) : null
           }
         }}
         disabled={isDownloading || !isValidUrl(url)}

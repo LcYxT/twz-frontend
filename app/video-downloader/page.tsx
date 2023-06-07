@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useEffect, useState } from 'react'
-import { FileInfo } from '../utils'
-import { getFileList } from '../utils/api'
-import { FileList, UrlDownloader } from '../components'
+import { FileInfo } from '../../utils'
+import { getFileList } from '../../utils/api'
+import { FileList, UrlDownloader } from '../../components'
 import styles from './page.module.scss'
 
 function Home() {
