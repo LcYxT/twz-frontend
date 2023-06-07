@@ -6,6 +6,7 @@ import { FileInfo } from '../src/utils'
 import { getFileList } from '../src/utils/api'
 import { FileList, UrlDownloader } from '../src/components'
 import styles from './page.module.scss'
+import Head from 'next/head';
 
 function Home() {
   const [fileList, setFileList] = useState<FileInfo[] | null>(null)
@@ -20,7 +21,11 @@ function Home() {
 
   useEffect(updateFileList, [])
 
-  return (
+  return (<>
+    <Head>
+      <meta name="description" content="Video Downloader for web video downloading" />
+      <title>Video Downloader</title>
+    </Head>
     <div className={styles["container-wrap"]}>
     <div className={styles.container}>
       <UrlDownloader onDownloaded={updateFileList} onError={(e) => { alert(e) }} />
@@ -29,6 +34,7 @@ function Home() {
         : <span>載入檔案清單中...</span>}
       </div>
     </div>
+  </>
   )
 }
 
