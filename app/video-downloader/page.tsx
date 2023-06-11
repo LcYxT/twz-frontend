@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { FileInfo } from '../../utils'
-import { getFileList } from '../../utils/api'
+import { getStaticFileList } from '../../utils/api'
 import { FileList, UrlDownloader } from '../../components'
 import styles from './page.module.scss'
 
@@ -11,7 +11,7 @@ function Home() {
 
   const updateFileList = () => {
     const asyncRun = async () => {
-      const result = await getFileList()
+      const result = await getStaticFileList()
       setFileList(result)
     }
     asyncRun()

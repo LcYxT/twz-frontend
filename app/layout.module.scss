@@ -1,80 +1,73 @@
+@mixin desktop {
+  @media screen and (min-width:768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width:767px) {
+    @content;
+  }
+}
+
 .navbar {
-  background-color: #f2f2f2;
+  background-color: rgb(49, 49, 49);
+  color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Updated: Center align the navbar links */
-  padding: 10px;
-}
+  position: fixed;
+  left: 0;
 
-.navbar-brand {
-  font-weight: bold;
-  margin-bottom: 10px;
+  @include desktop {
+    top: 0;
+    height: 100%;
+    width: 112px;
+  }
+
+  @include mobile {
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+  }
 }
 
 .navbar-links {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  display: flex;
+
+  @include desktop {
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include mobile {
+    width: 100%;
+    justify-content: space-around;
+  }
 }
 
 .navbar-link {
-  margin-bottom: 10px;
-}
-
-/* Styles for desktop */
-@media screen and (min-width: 768px) {
-  .navbar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 80px;
-    padding: 20px;
+  @include desktop {
+    margin-bottom: 30px;
   }
 
-  .navbar-links {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .navbar-link {
-    margin-bottom: 20px;
-  }
-}
-
-/* Styles for mobile */
-@media screen and (max-width: 767px) {
-  .navbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f2f2f2;
-    padding: 10px;
-  }
-
-  .navbar-links {
-    display: flex;
-    justify-content: center;
-  }
-
-  .navbar-link {
-    margin: 5px;
+  @include mobile {
+    padding: 12px;
   }
 }
 
 .container {
+  color: rgb(255, 255, 255);
+  background-color: rgb(58, 58, 58);
   padding: 20px;
-  margin-left: 0;
-  /* Adjust this value to create space for the navbar on the left */
+  height: 100vh;
 
   /* Styles for desktop */
-  @media screen and (min-width: 768px) {
-    margin-left: 120px;
-    /* Adjust this value to match the width of the navbar */
+  @include mobile {}
+
+  @include desktop {
+    margin-left: 112px;
   }
 }

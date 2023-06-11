@@ -1,5 +1,5 @@
 import { InferGetServerSidePropsType } from 'next';
-import { FileInfo, getFileList } from '../../utils'
+import { FileInfo, getStaticFileList } from '../../utils'
 import style from './fileList.module.scss'
 
 interface Props {
@@ -39,7 +39,7 @@ export function FileList({ fileList }: InferGetServerSidePropsType<typeof getSer
 }
 
 export async function getServerSideProps() {
-  const fileList = await getFileList()
+  const fileList = await getStaticFileList()
   console.log(fileList)
   return {
     props: {

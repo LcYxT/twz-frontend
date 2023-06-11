@@ -3,7 +3,7 @@ import { FileInfo } from './type'
 
 export const BackendUrl = 'https://api.twz.tw'
 
-export async function getFileList() {
+export async function getStaticFileList() {
   try {
     const response = await axios.get<FileInfo[]>(`${BackendUrl}/file/list`)
     return response.data

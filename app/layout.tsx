@@ -5,8 +5,8 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Video Downloader',
-  description: 'Web Video Downloader for web video downloading.',
+  title: 'twzflix',
+  description: 'Fansub video sharing website by twz',
 }
 
 export default function RootLayout({
@@ -19,10 +19,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <nav className={styles.navbar}>
           {/* <div className={styles["navbar-brand"]}>Logo</div> */}
-          <ul className={styles["navbar-links"]}>
-            <li className={styles["navbar-link"]}><a href="/"><img src="/home.svg" /></a></li>
-            <li className={styles["navbar-link"]}><a href="/video-downloader"><img src="/download.png" /></a></li>
-          </ul>
+          <div className={styles["navbar-links"]}>
+            <a className={styles["navbar-link"]} href="/"><img src="/home.svg" /></a>
+            <a href="/video-downloader" className={styles["navbar-link"]}><img src="/download.png" /></a>
+          </div>
         </nav>
         <div className={styles.container}>{children}</div>
       </body>

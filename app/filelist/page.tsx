@@ -1,10 +1,10 @@
 import React from 'react'
-import { getFileList } from '../../utils/api'
+import { getStaticFileList } from '../../utils/api'
 import { FileList } from '../../components'
 import styles from './page.module.scss'
 
 async function Home() {
-  const fileList = await getFileList()
+  const fileList = await getStaticFileList()
 
   return (
     <div className={styles.container}>
