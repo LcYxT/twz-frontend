@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import './globals.css'
+import '../globals.css'
 import styles from './layout.module.scss'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'

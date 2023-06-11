@@ -1,6 +1,6 @@
 import React from 'react'
-import { getStaticFileList } from '../../utils/api'
-import { FileList, Header, UrlDownloader } from '../../components'
+import { getStaticFileList } from '../../../utils/api'
+import { FileList, Header, UrlDownloader } from '../../../components'
 import styles from './page.module.scss'
 
 export const revalidate = 0
