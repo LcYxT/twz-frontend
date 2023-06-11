@@ -1,6 +1,7 @@
 import './globals.css'
 import styles from './layout.module.scss'
 import { Inter } from 'next/font/google'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,8 +21,8 @@ export default function RootLayout({
         <nav className={styles.navbar}>
           {/* <div className={styles["navbar-brand"]}>Logo</div> */}
           <div className={styles["navbar-links"]}>
-            <a className={styles["navbar-link"]} href="/"><img src="/home.svg" /></a>
-            <a href="/video-downloader" className={styles["navbar-link"]}><img src="/download.png" /></a>
+            <Link className={styles["navbar-link"]} href="/"><img src="/home.svg" /></Link>
+            <Link href="/video-downloader" className={styles["navbar-link"]}><img src="/download.png" /></Link>
           </div>
         </nav>
         <div className={styles.container}>{children}</div>
