@@ -22,7 +22,7 @@ export default function RootLayout({
           {/* <div className={styles["navbar-brand"]}>Logo</div> */}
           <div className={styles["navbar-links"]}>
             <Link className={styles["navbar-link"]} href="/"><img src="/home.svg" /></Link>
-            <Link href="/video-downloader" className={styles["navbar-link"]}><img src="/download.png" /></Link>
+            <Link href="/downloader" className={styles["navbar-link"]}><img src="/download.png" /></Link>
           </div>
         </nav>
         <div className={styles.container}>{children}</div>

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { getDownloadingList, postDownloadUrl } from '../../utils'
 import styles from './urlDownloader.module.scss'
+import { useRouter } from 'next/navigation'
 
 interface Props {
   onDownloaded?: () => void
@@ -23,6 +24,9 @@ function isValidUrl(url: string): boolean {
 export function UrlDownloader({ onDownloaded, onError }: Props) {
   const [url, setUrl] = useState('')
   const [isDownloading, setIsDownloading] = useState(false)
+  const router = useRouter()
+
+
 
   useEffect(() => {
     if (!isDownloading) return
@@ -30,9 +34,9 @@ export function UrlDownloader({ onDownloaded, onError }: Props) {
       const downloadingList = await getDownloadingList()
       if (!downloadingList.includes(url)) {
         setIsDownloading(false)
-        onDownloaded ? onDownloaded() : null
+        router.refresh()
       }
-    }, 5000)
+    }, 3000)
 
     return () => {
       clearInterval(periodicRun)

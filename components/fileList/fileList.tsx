@@ -1,5 +1,4 @@
-import { InferGetServerSidePropsType } from 'next';
-import { FileInfo, getStaticFileList } from '../../utils'
+import { FileInfo } from '../../utils'
 import style from './fileList.module.scss'
 
 interface Props {
@@ -28,7 +27,7 @@ function FileListItem({ file }: { file: FileInfo }) {
   )
 }
 
-export function FileList({ fileList }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export function FileList({ fileList }: Props) {
   return (
     <ul className={style['file-list']}>
       {fileList.length > 0 ? fileList.sort((a, b) => b.modified_time.localeCompare(a.modified_time)).map((file) => (
@@ -38,12 +37,4 @@ export function FileList({ fileList }: InferGetServerSidePropsType<typeof getSer
   )
 }
 
-export async function getServerSideProps() {
-  const fileList = await getStaticFileList()
-  console.log(fileList)
-  return {
-    props: {
-      fileList
-    },
-  };
-}
+
