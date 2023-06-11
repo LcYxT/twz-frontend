@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react'
-import { postDownloadUrl } from '../../utils'
+import { useEffect, useState } from 'react'
+import { getDownloadingList, postDownloadUrl } from '../../utils'
 import styles from './urlDownloader.module.scss'
 
 interface Props {
@@ -24,6 +24,21 @@ export function UrlDownloader({ onDownloaded, onError }: Props) {
   const [url, setUrl] = useState('')
   const [isDownloading, setIsDownloading] = useState(false)
 
+  useEffect(() => {
+    if (!isDownloading) return
+    const periodicRun = setInterval(async () => {
+      const downloadingList = await getDownloadingList()
+      if (!downloadingList.includes(url)) {
+        setIsDownloading(false)
+        onDownloaded ? onDownloaded() : null
+      }
+    }, 5000)
+
+    return () => {
+      clearInterval(periodicRun)
+    }
+  }, [isDownloading])
+
   return (
     <div className={styles.container}>
       <input className={styles.url} value={url} onChange={(e) => setUrl(e.target.value)} placeholder="YouTube影片網址" />
@@ -34,10 +49,7 @@ export function UrlDownloader({ onDownloaded, onError }: Props) {
           try {
             setIsDownloading(true)
             await postDownloadUrl(url)
-            setIsDownloading(false)
-            onDownloaded ? onDownloaded() : null
           } catch (e) {
-            setIsDownloading(false)
             onError ? onError(e) : null
           }
         }}

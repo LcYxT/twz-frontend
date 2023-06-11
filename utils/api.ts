@@ -32,3 +32,13 @@ export async function postDownloadUrl(url: string) {
     throw error
   }
 }
+
+export async function getDownloadingList() {
+  try {
+    const response = await axios.get<String[]>(`${BackendUrl}/downloading-list`)
+    return response.data
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
+}
