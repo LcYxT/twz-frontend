@@ -19,6 +19,7 @@
     bottom: 0;
     width: 100%;
     padding: 10px;
+    height: 72px;
   }
 }
 
@@ -54,8 +55,10 @@
   padding: 32px;
   height: 100vh;
 
-  /* Styles for desktop */
-  @include mobile {}
+  @include mobile {
+    margin-bottom: 72px;
+    height: calc(100vh - 72px);
+  }
 
   @include desktop {
     margin-left: 112px;
