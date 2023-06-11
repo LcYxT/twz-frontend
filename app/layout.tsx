@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import './globals.css'
 import styles from './layout.module.scss'
 import { Inter } from 'next/font/google'
@@ -5,9 +6,10 @@ import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'TWZFLIX',
   description: 'Fansub video sharing website by twz',
+  manifest: '/manifest.json'
 }
 
 export default function RootLayout({
@@ -17,9 +19,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="manifest" href="/manifest.json" />
-      </head>
       <body className={inter.className}>
         <nav className={styles.navbar}>
           <div className={styles["navbar-links"]}>
