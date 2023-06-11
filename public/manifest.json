@@ -1,0 +1,10 @@
+{
+  "name": "TWZFLIX",
+  "short_name": "TWZFLIX",
+  "description": "TWZFLIX",
+  "theme_color": "#E3E3E3",
+  "background_color": "#2B2B2B",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/"
+}

@@ -17,12 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <body className={inter.className}>
         <nav className={styles.navbar}>
-          {/* <div className={styles["navbar-brand"]}>Logo</div> */}
           <div className={styles["navbar-links"]}>
-            <Link className={styles["navbar-link"]} href="/"><img src="/home.svg" /></Link>
-            <Link href="/downloader" className={styles["navbar-link"]}><img src="/download.png" /></Link>
+            <Link className={styles["navbar-link"]} href="/"><img src="/images/home.svg" /></Link>
+            <Link href="/downloader" className={styles["navbar-link"]}><img src="/images/download.png" /></Link>
           </div>
         </nav>
         <div className={styles.container}>{children}</div>

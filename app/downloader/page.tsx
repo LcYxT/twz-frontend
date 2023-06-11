@@ -3,6 +3,8 @@ import { getStaticFileList } from '../../utils/api'
 import { FileList, Header, UrlDownloader } from '../../components'
 import styles from './page.module.scss'
 
+export const revalidate = 0
+
 async function Home() {
   const fileList = await getStaticFileList()
 
