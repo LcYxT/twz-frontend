@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { FileInfo } from './type'
 
-export const BackendUrl = 'https://api.twz.tw'
+export const BackendUrl = 'https://twz.tw/api'
 
 export async function getStaticFileList() {
   try {
