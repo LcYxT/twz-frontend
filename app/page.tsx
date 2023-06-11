@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from './page.module.scss'
+import { Header } from '@/components'
 
 function Home() {
   return (<>
-    comming soon
+    <Header title="TWZFLIX" />
   </>
   )
 }

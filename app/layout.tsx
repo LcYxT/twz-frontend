@@ -6,7 +6,7 @@ import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'twzflix',
+  title: 'TWZFLIX',
   description: 'Fansub video sharing website by twz',
 }
 

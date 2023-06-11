@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { FileInfo } from '../../utils'
 import { getStaticFileList } from '../../utils/api'
-import { FileList, UrlDownloader } from '../../components'
+import { FileList, Header, UrlDownloader } from '../../components'
 import styles from './page.module.scss'
 
 function Home() {
@@ -20,6 +20,7 @@ function Home() {
   useEffect(updateFileList, [])
 
   return (<>
+    <Header title="Downloader" />
     <div className={styles["container-wrap"]}>
       <div className={styles.container}>
         <UrlDownloader onDownloaded={updateFileList} onError={(e) => { alert(e) }} />

@@ -1,0 +1,32 @@
+@import "../../app/globals.scss";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 32px max(32px, ((100vw - 112px) - 1240px) / 2);
+
+  @include desktop {
+    width: calc(100% - 112px);
+    font-size: 28px;
+    margin-left: 112px;
+  }
+
+  @include mobile {
+    font-size: 20px;
+    width: 100%;
+    padding: 24px 28px;
+  }
+
+  h1 {
+    font-weight: 600;
+
+    @include desktop {
+      font-size: 28px;
+    }
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+}
