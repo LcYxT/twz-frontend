@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'TWZFLIX',
-  description: 'Fansub video sharing website by twz',
+  description: 'Video archive website by twz',
   manifest: '/manifest.json'
 }
 
