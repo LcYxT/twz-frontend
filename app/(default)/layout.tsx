@@ -1,8 +1,6 @@
 import { Metadata } from 'next'
 import '../globals.css'
-import styles from './layout.module.scss'
 import { Inter } from 'next/font/google'
-import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,14 +17,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      </head>
       <body className={inter.className}>
-        <nav className={styles.navbar}>
-          <div className={styles["navbar-links"]}>
-            <Link className={styles["navbar-link"]} href="/"><img src="/images/home.svg" /></Link>
-            <Link className={styles["navbar-link"]} href="/downloader"><img src="/images/download.png" /></Link>
-          </div>
-        </nav>
-        <div className={styles.container}>{children}</div>
+        {children}
       </body>
     </html>
   )

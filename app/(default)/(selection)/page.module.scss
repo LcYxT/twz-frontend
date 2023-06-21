@@ -1,0 +1,144 @@
+@import "../../globals";
+
+.selection-container {
+  background: #141414;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  z-index: 0;
+  transition: ease-in;
+
+  .category-container {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    opacity: 0;
+    transform: scale(1.1);
+    animation: fadeIn 0.5s forwards;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(1.1);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .category-list {
+      max-width: 80%;
+      display: block;
+      list-style-type: disc;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 40px;
+      padding: 0;
+
+      .selection-label {
+        color: #fff;
+        font-size: calc(28px + 1.0vw);
+        font-weight: unset;
+        width: 100%;
+        transition: opacity .4s ease-out;
+        margin-block-start: 0.67em;
+        margin-block-end: 0.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+      }
+
+      .choose-category {
+        margin: 2em 0;
+        padding: 0;
+
+        .category {
+          max-width: 200px;
+          min-width: 150px;
+          width: 25vw;
+          display: inline-block;
+          position: relative;
+          vertical-align: top;
+
+          a {
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+          }
+
+          &:not(:last-child) {
+            margin: 0 2vw 0 0;
+          }
+
+          .category-icon {
+            background-color: #333;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: none;
+            border-radius: 4px;
+            box-sizing: border-box;
+            height: 25vw;
+            max-height: 200px;
+            max-width: 200px;
+            min-height: 150px;
+            min-width: 150px;
+            position: relative;
+            text-decoration: none;
+            width: 25vw;
+
+            &.lsrf {
+              background-image: url('/images/lsrf-logo.svg');
+            }
+
+            &.gidle {
+              background-image: url('/images/gidle-logo.svg');
+            }
+          }
+
+          &:hover {
+            .category-icon::after {
+              border: .3em solid #e5e5e5;
+              border-radius: 4px;
+              bottom: 0;
+              content: "";
+              display: block;
+              left: 0;
+              position: absolute;
+              right: 0;
+              top: 0;
+            }
+
+            .category-name {
+              color: #e5e5e5;
+            }
+          }
+
+          .category-name {
+            color: grey;
+            display: block;
+            font-size: 12px;
+            line-height: 1.2em;
+            margin: .6em 0;
+            min-height: 1.8em;
+            overflow: hidden;
+            text-align: center;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+}

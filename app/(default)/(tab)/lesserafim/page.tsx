@@ -3,7 +3,7 @@ import { Header } from '@/components'
 
 function Home() {
   return (<>
-    <Header title="TWZFLIX" />
+    <Header title="LESSERAFIM" />
   </>
   )
 }
