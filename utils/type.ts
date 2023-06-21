@@ -10,3 +10,18 @@ export interface DownloadInfo {
   resolution: string,
   link: string
 }
+
+export enum Category {
+  GIDLE = 'gidle',
+  LESSERAFIM = 'lesserafim'
+}
+
+export interface VideoInfo {
+    vid: string
+    title: string
+    description: string
+    date: string
+    category: Category
+    likes: number
+    views: number
+}

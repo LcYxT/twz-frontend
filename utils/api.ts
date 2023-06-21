@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { FileInfo } from './type'
+import { FileInfo, VideoInfo } from './type'
 
 export const BackendUrl = 'https://twz.tw/api'
 
@@ -36,6 +36,16 @@ export async function postDownloadUrl(url: string) {
 export async function getDownloadingList() {
   try {
     const response = await axios.get<String[]>(`${BackendUrl}/downloading-list`)
+    return response.data
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
+}
+
+export async function getVideoInfo(vid: string) {
+   try {
+    const response = await axios.get<VideoInfo | null>(`${BackendUrl}/video-info?vid=${vid}`)
     return response.data
   } catch (error) {
     console.error(error)
