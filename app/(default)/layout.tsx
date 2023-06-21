@@ -3,7 +3,6 @@ import '../globals.css'
 import styles from './layout.module.scss'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
-import { SplashScreen } from '@/components'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,7 +20,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SplashScreen />
         <nav className={styles.navbar}>
           <div className={styles["navbar-links"]}>
             <Link className={styles["navbar-link"]} href="/"><img src="/images/home.svg" /></Link>
