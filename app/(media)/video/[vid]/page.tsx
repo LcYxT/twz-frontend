@@ -10,7 +10,9 @@ async function VideoPage({ params }: {params: {vid: string}}) {
   const videoUrl = `https://twz.tw/api/video?vid=${params.vid}`
   return (<>
     <Header title="Video" />
-    <video width='100%' controls><source src={videoUrl} /></video>
+    <video width='100%' controls>
+      <source src={videoUrl} type="video/mp4" />
+    </video>
     <div>{videoInfo.date}</div>
     <div>{videoInfo.description}</div>
     <div>{videoInfo.title}</div>
