@@ -6,7 +6,7 @@ import classNames from "classnames"
 function LesserafimPage() {
   return (
     <>
-      <Header title="LESSERAFIM" icon="lesserafim" />
+      <Header title="LE SSERAFIM" icon="lesserafim" />
       <div className={styles.container}>
         <div className={styles["row"]}>
           <div className={classNames(styles["column"], styles["video-preview"])}>preview video?</div>
