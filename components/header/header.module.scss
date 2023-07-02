@@ -1,4 +1,5 @@
 @import "../../app/globals.scss";
+@import "../../app/globals";
 
 .header {
   position: fixed;
@@ -8,6 +9,7 @@
   display: flex;
   align-items: center;
   min-width: 275px;
+  z-index: 999;
 
   @include desktop {
     width: 100%;
@@ -19,12 +21,19 @@
     font-size: 20px;
     width: 100%;
     padding: 24px 28px;
+    justify-content: space-between;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
   }
 
   .lesserafim-icon {
     background-image: url("../../public/images/lsrf-header-logo.svg");
     background-repeat: no-repeat;
     margin-right: 10px;
+    flex-shrink: 0;
 
     @include desktop {
       width: 110px;
@@ -46,6 +55,71 @@
 
     @include mobile {
       font-size: 20px;
+    }
+  }
+}
+
+.navbar {
+  margin-left: 50px;
+
+  .navbar-links {
+    .navbar-link {
+      color: #cccccc;
+      text-decoration: none;
+
+      &:hover {
+        color: white;
+      }
+
+      @include mobile {
+        padding: 10px 20px;
+        &:not(:last-child) {
+          // border-bottom: 1px solid;
+        }
+      }
+    }
+
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex: 1;
+      font-size: 20px;
+      max-width: 500px;
+      min-width: 500px;
+
+      .menu-icon {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      display: none;
+      position: absolute;
+      background-color: black;
+      top: 58px;
+      right: 30px;
+      flex-direction: column;
+      z-index: 1;
+      border: 1px solid #cccccc;
+
+      &.expand {
+        display: flex;
+      }
+    }
+  }
+
+  @include desktop {
+    .menu-icon {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    .menu-icon {
+      display: unset;
+      cursor: pointer;
     }
   }
 }
