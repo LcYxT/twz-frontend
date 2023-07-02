@@ -1,8 +1,8 @@
-@import "../../../../globals";
+@import "../globals";
 
 .container {
   color: rgb(255, 255, 255);
-  background-color: black;
+  background-color: rgb(58, 58, 58);
   padding: 98px 32px 32px 32px;
   height: 100vh;
 
@@ -12,7 +12,7 @@
     padding: 72px 32px 32px 32px;
   }
 
-  // @include desktop {
-  //   margin-left: 112px;
-  // }
+  @include desktop {
+    // margin-left: 112px;
+  }
 }
